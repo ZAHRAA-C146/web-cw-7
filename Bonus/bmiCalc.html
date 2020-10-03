@@ -16,7 +16,7 @@
         <input
           dir="rtl"
           type="text"
-          placeholder="طولك بال m"
+          placeholder="147 m"
           id="height"
           style="text-align: center; font-size: 1rem; margin: 0.4rem"
         />
@@ -25,7 +25,7 @@
         <input
           dir="rtl"
           type="text"
-          placeholder="وزنك بال kg"
+          placeholder="40 kg"
           id="weight"
           style="
             text-align: center;
@@ -36,7 +36,7 @@
         />
       </div>
       <div class="center">
-        <button onclick="getBMI();">احسب</button>
+        <button onclick="getBMI()">احسب</button>
       </div>
       <div class="center">
         <h2 id="status"></h2>
@@ -55,6 +55,8 @@
         // weight القيمة التي تدخلها في الحقل الثاني تُخزن في المتغير
         var weight = document.getElementById("weight").value;
         // (مؤشر كتلة الجسم = الوزن/(الطول*الطول
+let BMI = weight/(height*height)
+       
         // 👇🏻 قم بترجمة المعادلة السابقة إلى كود
         // ثم قم باختبار قيمة الناتج لتتحقق الشروط التالية
         /*
@@ -64,11 +66,25 @@
               يا للهول! 😲          أكبر من أو يساوي 30
               لا أدري! 🤷🏻‍♀️                   أي شي ثاني
         */
-        if (condition) {
+
+        if ( BMI > 20) {
           document.getElementById("status").innerHTML = "أنت نحيف للغاية";
+        }else if ( BMI >= 20 && BMI <29 ) {
+          document.getElementById("status").innerHTML = "وزنك جيد";
         }
+        else if (BMI >=30 ){
+          document.getElementById("status").innerHTML = "يا للهول! 😲";
+        }
+        else if (BMI > 60 ){
+          document.getElementById("status").innerHTML = " لا أدري! 🤷🏻‍♀️";
         // أكمل
+        }
       }
+
     </script>
   </body>
 </html>
+
+
+
+
